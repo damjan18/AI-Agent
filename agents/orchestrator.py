@@ -1,6 +1,6 @@
-from planner_agent import PlannerAgent
-from researcher_agent import ResearcherAgent
-from writer_agent import WriterAgent
+from agents.planner_agent import PlannerAgent
+from agents.researcher_agent import ResearcherAgent
+from agents.writer_agent import WriterAgent
 
 class Orchestrator:
     def __init__(self):
