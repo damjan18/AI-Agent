@@ -3,12 +3,16 @@ from api.schemas import (
     TaskRequest,
     TaskResponse,
     SingleAgentRequest,
-    SingleAgentResponse
+    SingleAgentResponse,
+    ToolAgentRequest,
+    ToolAgentResponse
+    
 )
 from agents.orchestrator import Orchestrator
 from agents.planner_agent import PlannerAgent
 from agents.researcher_agent import ResearcherAgent
 from agents.writer_agent import WriterAgent
+from agents.tool_agent import ToolAgent
 
 router = APIRouter()
 
@@ -39,6 +43,16 @@ def run_single_agent(request: SingleAgentRequest):
     
     return {
         "agent": agent_name,
+        "response": response
+    }
+    
+@router.post("/tool-agent", response_model=ToolAgentResponse)
+def run_tool_agent(request: ToolAgentRequest):
+    agent = ToolAgent()
+    response = agent.run(request.message)
+    
+    return {
+        "message": request.message,
         "response": response
     }
     

@@ -17,6 +17,7 @@ def root():
         "endpoints": {
             "workflow": "/api/workflow",
             "single_agent": "/api/agent",
+            "tool_agent": "/api/tool-agent",
             "health": "/api/health"
         }
     }
