@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from typing import List, Optional
 
 class TaskRequest(BaseModel):
@@ -30,3 +30,11 @@ class ToolAgentRequest(BaseModel):
 class ToolAgentResponse(BaseModel):
     message: str
     response: str
+
+class ValidatedAgentRequest(BaseModel):
+    message: str =  Field(..., min_length=1, maxlength=2000)
+    
+class ValidatedAgentResponse(BaseModel):
+    message: str
+    response: str
+    validation_passed: bool
