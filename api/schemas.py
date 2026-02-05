@@ -23,3 +23,10 @@ class SingleAgentRequest(BaseModel):
 class SingleAgentResponse(BaseModel):
     agent: str
     response: str
+    
+class ToolAgentRequest(BaseModel):
+    message: str
+    
+class ToolAgentResponse(BaseModel):
+    message: str
+    response: str
