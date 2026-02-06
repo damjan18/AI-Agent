@@ -189,32 +189,68 @@ data/\*.txt
 
 test\_\*.py
 
+````
+## Frontend Setup
+
+The frontend is built with React + Vite.
+
+### Install dependencies
+```bash
+cd frontend
+npm install
+````
+
+### Run development server
+
+```bash
+npm run dev
+```
+
+### Open the app
+
+```
+http://localhost:5173
+```
+
+### Build for production
+
+```bash
+npm run build
 ```
 
 ---
 
 ## Final Folder Structure
+
 ```
 
 AI-Agent/
 ├── agents/
-│ ├── **init**.py
-│ ├── base_agent.py
-│ ├── guardrails.py
-│ ├── orchestrator.py
-│ ├── planner_agent.py
-│ ├── researcher_agent.py
-│ ├── tool_agent.py
-│ ├── validated_agent.py
-│ └── writer_agent.py
+│   ├── __init__.py
+│   ├── base_agent.py
+│   ├── guardrails.py
+│   ├── orchestrator.py
+│   ├── planner_agent.py
+│   ├── researcher_agent.py
+│   ├── tool_agent.py
+│   ├── validated_agent.py
+│   └── writer_agent.py
 ├── api/
-│ ├── **init**.py
-│ ├── routes.py
-│ └── schemas.py
+│   ├── __init__.py
+│   ├── routes.py
+│   └── schemas.py
 ├── tools/
-│ ├── **init**.py
-│ ├── file_tool.py
-│ └── web_search.py
+│   ├── __init__.py
+│   ├── file_tool.py
+│   └── web_search.py
+├── frontend/
+│   ├── src/
+│   │   ├── App.css
+│   │   ├── App.jsx
+│   │   ├── index.css
+│   │   └── main.jsx
+│   ├── package.json
+│   └── vite.config.js
 ├── data/
 ├── .dockerignore
 ├── .env
@@ -224,3 +260,4 @@ AI-Agent/
 ├── main.py
 ├── README.md
 └── requirements.txt
+```
