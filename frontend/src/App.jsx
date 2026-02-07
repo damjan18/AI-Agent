@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import "./App.css";
 
-const API_URL = "https://ai-agent-api-hp1r.onrender.com/";
+const API_URL = "https://ai-agent-api-hp1r.onrender.com/api";
 
 function App() {
   const [activeTab, setActiveTab] = useState("workflow");
