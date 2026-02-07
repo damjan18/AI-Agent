@@ -7,12 +7,16 @@ app = FastAPI(
     description="Multi-agent orchestration API with tools and guardrails",
     version="1.1.0"
 )
-
+origins = [
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+    "https://ai-agent-five-lake.vercel.app"
+]
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=origins,
     allow_credentials=True,
-    allow_methods=["*"],
+    allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allow_headers=["*"]
 )
 
